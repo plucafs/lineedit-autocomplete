@@ -7,8 +7,8 @@
    viewBox="0 0 317.49999 317.5"
    version="1.1"
    id="svg1"
-   sodipodi:docname="AutocompleteLineEdit.svg"
-   inkscape:version="1.3.2 (091e20ef0f, 2023-11-25, custom)"
+   sodipodi:docname="line_edit_autocomplete.svg"
+   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
    inkscape:export-filename="AutocompleteLineEdit.png"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96"
@@ -26,9 +26,26 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:zoom="0.13310992"
-     inkscape:cx="-863.94763"
-     inkscape:cy="961.61128"
-     inkscape:current-layer="svg1" />
+     inkscape:cx="1814.29"
+     inkscape:cy="364.36052"
+     inkscape:current-layer="g4"
+     showguides="true"
+     inkscape:window-width="1880"
+     inkscape:window-height="979"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0">
+    <sodipodi:guide
+       position="63.248404,-123.83331"
+       orientation="0,-1"
+       id="guide1"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="49.193203,-69.720789"
+       orientation="0,-1"
+       id="guide2"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
   <defs
      id="defs1" />
   <g
@@ -51,6 +68,7 @@
     <path
        id="rect1"
        style="fill:#8eef97;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:71.3301;stroke-linejoin:bevel;stroke-miterlimit:5"
-       d="M 28.705152,25.451003 140.93653,292.04899 h 145.53996 c 17.18708,0 31.0235,-13.83644 31.0235,-31.02352 V 56.474504 c 0,-17.18708 -13.83642,-31.023501 -31.0235,-31.023501 H 114.82062 103.06537 57.410317 Z M 42.562984,229.93638 v 19.54868 c 0,23.57999 -18.983028,42.56393 -42.5629790000001,42.56393 H 57.410317 78.068261 L 54.546362,229.93638 Z" />
+       d="M 28.705152,25.451003 140.93653,292.04899 h 145.53996 c 17.18708,0 31.0235,-13.83644 31.0235,-31.02352 V 56.474504 c 0,-17.18708 -13.83642,-31.023501 -31.0235,-31.023501 H 114.82062 103.06537 57.410317 Z M 0,229.93663 v 62.10687 l 78.068261,0.005 -23.521899,-62.11261 z M -0.26458306,96.586631 V 158.6935 L 39.174511,158.6985 15.652612,96.585891 Z"
+       sodipodi:nodetypes="ccsssscccccccccccccc" />
   </g>
 </svg>
