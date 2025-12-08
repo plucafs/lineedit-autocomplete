@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://4ax7q5da4b0t"]
 
-[ext_resource type="Theme" uid="uid://ddx6ou4fnbt6" path="res://themes/label_theme.tres" id="1_0xm2m"]
-[ext_resource type="Theme" uid="uid://qmydhqc4iutd" path="res://themes/panel_theme.tres" id="1_h2yge"]
+[ext_resource type="Theme" uid="uid://ddx6ou4fnbt6" path="res://project-example/themes/label_theme.tres" id="1_0xm2m"]
+[ext_resource type="Theme" uid="uid://qmydhqc4iutd" path="res://project-example/themes/panel_theme.tres" id="1_h2yge"]
 [ext_resource type="Script" uid="uid://bre8u6w1iim0l" path="res://LineEditAutocomplete.gd" id="1_ig7tw"]
-[ext_resource type="Script" uid="uid://d4gym6in8x3tm" path="res://main.gd" id="2_1bvp3"]
+[ext_resource type="Script" uid="uid://d4gym6in8x3tm" path="res://project-example/main.gd" id="2_1bvp3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0xm2m"]
 bg_color = Color(0.568, 0.70526665, 0.71, 1)
