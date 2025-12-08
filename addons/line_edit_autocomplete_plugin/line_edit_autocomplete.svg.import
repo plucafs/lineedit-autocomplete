@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bytv0vn5bkfuj"
-path="res://.godot/imported/LineEditAutocomplete.svg-061040fb704d0a764d3b2ec6603abb6e.ctex"
+path="res://.godot/imported/line_edit_autocomplete.svg-cc435a1c0face2c14d0e2ab9e54e75aa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://LineEditAutocomplete.svg"
-dest_files=["res://.godot/imported/LineEditAutocomplete.svg-061040fb704d0a764d3b2ec6603abb6e.ctex"]
+source_file="res://addons/line_edit_autocomplete_plugin/line_edit_autocomplete.svg"
+dest_files=["res://.godot/imported/line_edit_autocomplete.svg-cc435a1c0face2c14d0e2ab9e54e75aa.ctex"]
 
 [params]
 

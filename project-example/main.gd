@@ -1,4 +1,3 @@
-@tool
 extends Control
 
 @onready var keys: Label = %Keys

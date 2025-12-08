@@ -2,8 +2,8 @@
 
 [ext_resource type="Theme" uid="uid://ddx6ou4fnbt6" path="res://project-example/themes/label_theme.tres" id="1_0xm2m"]
 [ext_resource type="Theme" uid="uid://qmydhqc4iutd" path="res://project-example/themes/panel_theme.tres" id="1_h2yge"]
-[ext_resource type="Script" uid="uid://bre8u6w1iim0l" path="res://LineEditAutocomplete.gd" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://d4gym6in8x3tm" path="res://project-example/main.gd" id="2_1bvp3"]
+[ext_resource type="Script" uid="uid://cxtdun3ap68qx" path="res://addons/line_edit_autocomplete_plugin/line_edit_autocomplete.gd" id="4_gf22f"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0xm2m"]
 bg_color = Color(0.568, 0.70526665, 0.71, 1)
@@ -59,13 +59,10 @@ theme = ExtResource("1_0xm2m")
 text = "Try the words: Godot game engine 2025"
 
 [node name="LineEditAutocomplete" type="LineEdit" parent="PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
-placeholder_text = "LineEdit autocomplete..."
-script = ExtResource("1_ig7tw")
-words_list = PackedStringArray("Godot", "game", "engine", "2025", "r/godot", "Hello", "lineedit autocomplete", "useful", "bye!")
-on_enter_focus_caret_to_the_end = false
-metadata/_custom_type_script = "uid://bre8u6w1iim0l"
+script = ExtResource("4_gf22f")
+words_list = PackedStringArray("Hello", "All")
+metadata/_custom_type_script = "uid://cxtdun3ap68qx"
 
 [node name="Hints" type="Label" parent="PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2

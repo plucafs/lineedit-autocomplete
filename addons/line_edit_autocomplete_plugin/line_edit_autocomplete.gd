@@ -1,11 +1,8 @@
-@icon("res://LineEditAutocomplete.svg")
 extends LineEdit
-class_name LineEditAutocomplete
 
 const SPACE := " "
 
 @export var words_list := PackedStringArray([])
-## You need to take care to add the spaces
 @export var words_separator := SPACE
 ## Simplify adding new words on linedit focus
 @export var on_enter_focus_caret_to_the_end := true
