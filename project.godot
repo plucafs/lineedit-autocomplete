@@ -8,11 +8,15 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="lineedit-autocomplete"
 run/main_scene="uid://4ax7q5da4b0t"
-config/features=PackedStringArray("4.5", "GL Compatibility")
+config/features=PackedStringArray("4.7", "GL Compatibility")
 run/low_processor_mode=true
 config/icon="res://icon.svg"
 
@@ -23,7 +27,7 @@ window/size/viewport_height=400
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/my_plugin/plugin.cfg")
+enabled=PackedStringArray("res://addons/line_edit_autocomplete_plugin/plugin.cfg")
 
 [rendering]
 

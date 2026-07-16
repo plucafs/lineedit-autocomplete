@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://4ax7q5da4b0t"]
+[gd_scene format=3 uid="uid://4ax7q5da4b0t"]
 
 [ext_resource type="Theme" uid="uid://ddx6ou4fnbt6" path="res://project-example/themes/label_theme.tres" id="1_0xm2m"]
 [ext_resource type="Theme" uid="uid://qmydhqc4iutd" path="res://project-example/themes/panel_theme.tres" id="1_h2yge"]
@@ -7,8 +7,21 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0xm2m"]
 bg_color = Color(0.568, 0.70526665, 0.71, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.7601965, 0.8414437, 0.8439493, 1)
 
-[node name="Main" type="Control"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gf22f"]
+bg_color = Color(0.840698, 0.6167052, 0.45943838, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.88276815, 0.791696, 0.73292917, 1)
+
+[node name="Main" type="Control" unique_id=1181064223]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -18,7 +31,7 @@ grow_vertical = 2
 theme = ExtResource("1_h2yge")
 script = ExtResource("2_1bvp3")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1558976848]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -26,62 +39,82 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CenterContainer" type="CenterContainer" parent="PanelContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer" unique_id=548715428]
 layout_mode = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/CenterContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/CenterContainer" unique_id=570937802]
+custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_0xm2m")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/CenterContainer/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/CenterContainer/PanelContainer" unique_id=708562729]
 layout_mode = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/CenterContainer/PanelContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/CenterContainer/PanelContainer/MarginContainer" unique_id=1748701670]
 layout_mode = 2
-theme_override_constants/separation = 16
+theme_override_constants/separation = 8
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1667419646]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_gf22f")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer" unique_id=826924454]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="Hints2" type="Label" parent="PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer" unique_id=1033394099]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "-!- Remember to activate the extension in the project settings"
+horizontal_alignment = 1
+text_overrun_behavior = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=824285475]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" unique_id=340813760]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Line edit autocomplete"
 
-[node name="Words" type="Label" parent="PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="Words" type="Label" parent="PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" unique_id=197615966]
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("1_0xm2m")
 text = "Try the words: Godot game engine 2025"
 
-[node name="LineEditAutocomplete" type="LineEdit" parent="PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="LineEditAutocomplete" type="LineEdit" parent="PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1866940810]
 layout_mode = 2
 script = ExtResource("4_gf22f")
-words_list = PackedStringArray("Hello", "All")
+words_list = PackedStringArray("Godot", "game", "engine", "2025", "2026", "3000")
 metadata/_custom_type_script = "uid://cxtdun3ap68qx"
 
-[node name="Hints" type="Label" parent="PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Hints" type="Label" parent="PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=653967727]
 layout_mode = 2
 theme = ExtResource("1_0xm2m")
 text = "Complete using ENTER or TAB"
 
-[node name="HSeparator" type="HSeparator" parent="PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=298738949]
 layout_mode = 2
 
-[node name="Keys" type="Label" parent="PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Keys" type="Label" parent="PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1955500165]
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("1_0xm2m")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=284951634]
 layout_mode = 2
 alignment = 2
 
-[node name="LinkButton" type="LinkButton" parent="PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="LinkButton" type="LinkButton" parent="PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1959173634]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "Repo link"
 uri = "https://github.com/plucafs/lineedit-autocomplete"
