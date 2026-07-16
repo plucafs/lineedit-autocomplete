@@ -127,7 +127,7 @@ func _on_text_changed(text_changed: String) -> void:
 		caret_column = start_caret_column
 		return
 
-	text = text_suggestion_single_tag
+	text = text_suggestion_single_tag.to_lower() if case_insensitive else text_suggestion_single_tag
 	select(text_length, -1)
 	caret_column = text_length
 

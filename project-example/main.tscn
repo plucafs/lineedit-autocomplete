@@ -104,7 +104,7 @@ autowrap_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 script = ExtResource("4_gf22f")
-words_list = PackedStringArray("GODOT", "Game", "enginE", "2026", "godot game engine 2026!", "godot", "LineEditAutocomplete", "Signal Up, Call Down")
+words_list = PackedStringArray("GODOT", "Game", "enginE", "2026", "godot game engine 2026!", "LineEditAutocomplete", "Signal Up, Call Down")
 metadata/_custom_type_script = "uid://cxtdun3ap68qx"
 
 [node name="Hints" type="Label" parent="PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=653967727]
