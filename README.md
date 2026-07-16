@@ -8,3 +8,7 @@ A node for Godot 4 that receives a list of words for which provides autocompleti
 2. Copy the `addons` folder in the root of your project
 3. From the Godot settings, under `Plugins` check to activate it.
 4. The node'll be in the nodes list, searching for "LineEditAutcomplete"
+
+## License
+
+MIT License. See [LICENSE](LICENSE) for details.
