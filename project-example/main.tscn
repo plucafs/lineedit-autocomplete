@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://4ax7q5da4b0t"]
 
-[ext_resource type="Theme" uid="uid://ddx6ou4fnbt6" path="res://project-example/themes/label_theme.tres" id="1_0xm2m"]
 [ext_resource type="Theme" uid="uid://qmydhqc4iutd" path="res://project-example/themes/panel_theme.tres" id="1_h2yge"]
 [ext_resource type="Script" uid="uid://d4gym6in8x3tm" path="res://project-example/main.gd" id="2_1bvp3"]
 [ext_resource type="Script" uid="uid://cxtdun3ap68qx" path="res://addons/line_edit_autocomplete_plugin/line_edit_autocomplete.gd" id="4_gf22f"]
@@ -20,6 +19,10 @@ border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0.88276815, 0.791696, 0.73292917, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_gf22f"]
+color = Color(0.7607843, 0.84313726, 0.84313726, 1)
+thickness = 2
 
 [node name="Main" type="Control" unique_id=1181064223]
 layout_mode = 3
@@ -84,30 +87,40 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Line edit autocomplete"
 
-[node name="Words" type="Label" parent="PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" unique_id=197615966]
-unique_name_in_owner = true
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" unique_id=488717606]
+custom_minimum_size = Vector2(0, 75)
 layout_mode = 2
-theme = ExtResource("1_0xm2m")
-text = "Try the words: Godot game engine 2025"
+size_flags_vertical = 3
+
+[node name="Words" type="Label" parent="PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/ScrollContainer" unique_id=197615966]
+unique_name_in_owner = true
+custom_maximum_size = Vector2(300, -1)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8664246, 0.93915063, 0.9393261, 1)
+text = "Try: ..."
+autowrap_mode = 2
 
 [node name="LineEditAutocomplete" type="LineEdit" parent="PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1866940810]
+unique_name_in_owner = true
 layout_mode = 2
 script = ExtResource("4_gf22f")
-words_list = PackedStringArray("Godot", "game", "engine", "2025", "2026", "3000")
+words_list = PackedStringArray("GODOT", "Game", "enginE", "2026", "godot game engine 2026!", "godot", "LineEditAutocomplete", "Signal Up, Call Down")
 metadata/_custom_type_script = "uid://cxtdun3ap68qx"
 
 [node name="Hints" type="Label" parent="PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=653967727]
 layout_mode = 2
-theme = ExtResource("1_0xm2m")
+theme_override_colors/font_color = Color(0.8664246, 0.93915063, 0.9393261, 1)
 text = "Complete using ENTER or TAB"
 
 [node name="HSeparator" type="HSeparator" parent="PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=298738949]
 layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_gf22f")
 
 [node name="Keys" type="Label" parent="PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1955500165]
 unique_name_in_owner = true
 layout_mode = 2
-theme = ExtResource("1_0xm2m")
+theme_override_colors/font_color = Color(0.8664246, 0.93915063, 0.9393261, 1)
+text = "Key pressed: "
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=284951634]
 layout_mode = 2
