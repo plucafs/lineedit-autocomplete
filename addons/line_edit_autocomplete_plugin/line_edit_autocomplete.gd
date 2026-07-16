@@ -98,6 +98,7 @@ func _on_text_changed(text_changed: String) -> void:
 	if is_key_delete_pressed:
 		return
 
+#TODO Handle spaces inside match words
 	if is_key_space_pressed:
 		is_key_space_pressed = false
 		return
