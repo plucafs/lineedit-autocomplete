@@ -1,15 +1,22 @@
+class_name AutocompleteLineEdit
 extends LineEdit
 
 const SPACE := " "
+var words_separator := SPACE
 
+## The list of words to match against the last word of the LineEdit
+## for suggestions
 @export var words_list := PackedStringArray([])
-@export var words_separator := SPACE
-## Simplify adding new words on linedit focus
-@export var on_enter_focus_caret_to_the_end := true
-## Sort the words array alphabetically
+
+## Simplifies adding new words to the LineEdit when it grabs the focus
+@export var on_focus_move_caret_to_end := true
+
+## Sorts the words array alphabetically
 @export var sort_words_list := true
-## The text checked against the words is lowered
-@export var input_text_to_lower := false
+
+## Makes the match case insensitive.[br]
+## e.g. [ABC] will be suggested when or `AB` or `ab` is typed
+@export var case_insensitive := false
 
 var text_buffer := ""
 var is_key_backspace_pressed := false
@@ -58,15 +65,13 @@ func _input(event: InputEvent) -> void:
 			is_key_delete_pressed = false
 
 
-## Handles only lowercase words
 func _on_text_changed(text_changed: String) -> void:
-	var _words_list := words_list
+	var words_list_dup := Array(words_list)
 	if sort_words_list:
-		_words_list.sort()
+		words_list_dup.sort_custom(func(a, b): return a.naturalnocasecmp_to(b) < 0)
 	text_changed = text_changed.strip_edges()
-	if input_text_to_lower:
-		text_changed = text_changed.to_lower()
 	var has_words_separator := text_changed.contains(words_separator)
+
 	var other_tags := []
 
 	if has_words_separator:
@@ -97,33 +102,35 @@ func _on_text_changed(text_changed: String) -> void:
 		is_key_space_pressed = false
 		return
 
-	var ordered_words_list = Array(_words_list)\
-		.filter(func(word):
-			return word.begins_with(text_changed) && not word == text_changed)
+	var ordered_words_list = Array(words_list_dup)\
+		.filter(func(word: String):
+			if case_insensitive:
+				return word.to_lower().begins_with(text_changed.to_lower()) && word != text_changed
+			return word.begins_with(text_changed) && word != text_changed)
 
 	if ordered_words_list.is_empty():
 		return
 
-	var _text_length = text_changed.length()
-	if _text_length == 0:
+	var text_length = text_changed.length()
+	if text_length == 0:
 		return
 
-	var suggestion_single_tag = text_changed + ordered_words_list[0].erase(0, _text_length)
-	var suggestion_multi_tags = ordered_words_list[0].erase(0, _text_length)
+	var text_suggestion_single_tag = text_changed + ordered_words_list[0].erase(0, text_length)
+	var text_suggestion_multi_tags = ordered_words_list[0].erase(0, text_length)
 
 	if has_words_separator:
 		text = words_separator.join(other_tags) + words_separator + text_changed
 		var start_caret_column = text.length()
-		text += suggestion_multi_tags
+		text += text_suggestion_multi_tags
 		select(start_caret_column, -1)
 		caret_column = start_caret_column
 		return
 
-	text = suggestion_single_tag
-	select(_text_length, -1)
-	caret_column = _text_length
+	text = text_suggestion_single_tag
+	select(text_length, -1)
+	caret_column = text_length
 
 
 func _on_focus_entered() -> void:
-	if on_enter_focus_caret_to_the_end:
+	if on_focus_move_caret_to_end:
 		caret_column = text.length()
