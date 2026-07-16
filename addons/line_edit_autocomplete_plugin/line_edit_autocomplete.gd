@@ -26,7 +26,7 @@ func _input(event: InputEvent) -> void:
 		return
 	if not event.is_pressed():
 		return
-	
+
 	var _text := text
 	match event.keycode:
 		KEY_DELETE:
@@ -86,31 +86,31 @@ func _on_text_changed(text_changed: String) -> void:
 		return
 
 	text_buffer = text_changed
-	
+
 	if is_key_backspace_pressed:
 		return
 
 	if is_key_delete_pressed:
 		return
-	
+
 	if is_key_space_pressed:
 		is_key_space_pressed = false
 		return
-		
+
 	var ordered_words_list = Array(_words_list)\
 		.filter(func(word):
 			return word.begins_with(text_changed) && not word == text_changed)
-	
+
 	if ordered_words_list.is_empty():
 		return
 
 	var _text_length = text_changed.length()
 	if _text_length == 0:
 		return
-		
+
 	var suggestion_single_tag = text_changed + ordered_words_list[0].erase(0, _text_length)
 	var suggestion_multi_tags = ordered_words_list[0].erase(0, _text_length)
-	
+
 	if has_words_separator:
 		text = words_separator.join(other_tags) + words_separator + text_changed
 		var start_caret_column = text.length()
