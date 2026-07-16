@@ -72,7 +72,7 @@ theme_override_constants/margin_bottom = 4
 [node name="Hints2" type="Label" parent="PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer" unique_id=1033394099]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
-text = "-!- Remember to activate the extension in the project settings"
+text = "-!- Remember to activate the plugin in the project settings"
 horizontal_alignment = 1
 text_overrun_behavior = 4
 
