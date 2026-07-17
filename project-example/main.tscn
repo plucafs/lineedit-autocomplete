@@ -105,12 +105,18 @@ unique_name_in_owner = true
 layout_mode = 2
 script = ExtResource("4_gf22f")
 words_list = PackedStringArray("GODOT", "Game", "enginE", "2026", "godot game engine 2026!", "LineEditAutocomplete", "Signal Up, Call Down")
+case_insensitive = true
 metadata/_custom_type_script = "uid://cxtdun3ap68qx"
 
 [node name="Hints" type="Label" parent="PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=653967727]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.8664246, 0.93915063, 0.9393261, 1)
 text = "Complete using ENTER or TAB"
+
+[node name="CaseInsensitiveCheckBox" type="CheckBox" parent="PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=830929699]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Case insensitive"
 
 [node name="HSeparator" type="HSeparator" parent="PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=298738949]
 layout_mode = 2
@@ -122,12 +128,8 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.8664246, 0.93915063, 0.9393261, 1)
 text = "Key pressed: "
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=284951634]
-layout_mode = 2
-alignment = 2
-
-[node name="LinkButton" type="LinkButton" parent="PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1959173634]
+[node name="LinkButton" type="LinkButton" parent="PanelContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1959173634]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-text = "Repo link"
+text = "github.com/plucafs/lineedit-autocomplete"
 uri = "https://github.com/plucafs/lineedit-autocomplete"
