@@ -134,7 +134,7 @@ func _on_text_changed(text_changed: String) -> void:
 		caret_column = start_caret_column
 		return
 
-	text = ordered_words_list[0]
+	text = first_suggestion
 	select(text_changed_length, -1)
 	caret_column = text_changed_length
 
