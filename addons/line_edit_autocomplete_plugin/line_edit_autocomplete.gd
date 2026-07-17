@@ -112,24 +112,31 @@ func _on_text_changed(text_changed: String) -> void:
 	if ordered_words_list.is_empty():
 		return
 
-	var text_length = text_changed.length()
-	if text_length == 0:
+	var text_changed_length = text_changed.length()
+	if text_changed_length == 0:
 		return
 
-	var text_suggestion_single_tag = text_changed + ordered_words_list[0].erase(0, text_length)
-	var text_suggestion_multi_tags = ordered_words_list[0].erase(0, text_length)
+	var first_suggestion: String = ordered_words_list[0]
+	var text_suggestion_single_tag: String = text_changed + first_suggestion.erase(0, text_changed_length)
+	var text_suggestion_multi_tags: String = first_suggestion.erase(0, text_changed_length)
 
 	if has_words_separator:
+		var suggestion_fragment: String = first_suggestion.erase(
+			text_changed_length,
+			first_suggestion.length()
+		)
+		if case_insensitive && text_changed != suggestion_fragment:
+			text_changed = suggestion_fragment
 		text = words_separator.join(other_tags) + words_separator + text_changed
-		var start_caret_column = text.length()
+		var start_caret_column := text.length()
 		text += text_suggestion_multi_tags
 		select(start_caret_column, -1)
 		caret_column = start_caret_column
 		return
 
-	text = text_suggestion_single_tag.to_lower() if case_insensitive else text_suggestion_single_tag
-	select(text_length, -1)
-	caret_column = text_length
+	text = ordered_words_list[0]
+	select(text_changed_length, -1)
+	caret_column = text_changed_length
 
 
 func _on_focus_entered() -> void:
